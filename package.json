@@ -1,0 +1,15 @@
+{
+  "name": "express-lab-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"express lab 2\"",
+    "start": "nodemon express2.js"
+  },
+  "author": "\"Joshua A Morris\"",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
