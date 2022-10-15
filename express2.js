@@ -5,13 +5,16 @@ app.get('/', (req, res) => {
     res.send('You are home.')
 })
 
+
+
 app.get('/greeting', (req, res) => {
     res.send(`Nice to see you, Friend!`)
 })
-
 app.get('/greeting/:name', (req, res) => {
     res.send(`Nice to meet you, ${req.params.name}!`)
 })
+
+
 
 app.get('/tip/:total/:tipPercentage', (req, res) => {
     let total = parseInt(req.params.total)
@@ -19,6 +22,8 @@ app.get('/tip/:total/:tipPercentage', (req, res) => {
     console.log(tipPercentage * total / 100)
     res.send(`${tipPercentage * total / 100}`)
 })
+
+
 
 const eightBall = [
  "It is certain",
@@ -43,7 +48,6 @@ const eightBall = [
  "Very doubtful"
 ]
 
-
 // app.get(/)
 // var magic = 
  app.get('/magic', (req, res) =>{
@@ -51,6 +55,18 @@ const eightBall = [
  res.send(eightBall[req.params.magic]   
 
           
+          
+ const bottles = [0]
+
+app.get('/bottles', (req, res) => {
+    res.send('99 Bottles of Beer on the Wall') 
+})
+app.get('/bottles/:number_of_bottles', (req, res) => {
+    if (req.params.number_of_bottles === 0) {
+       res.send(bottles[req.params.number_of_bottles])
+    } else {
+    res.send([req.params.number_of_bottles - 1])}
+})         
 app.listen(3000, () => {
     console.log(`You are listening to Port 3000...`)
 })
